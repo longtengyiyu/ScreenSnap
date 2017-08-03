@@ -111,7 +111,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     }
 
     private void createScreenSnap(){
-//        ScreenSnapView ssv = new ScreenSnapView(MainActivity.this);
         WebView webView = new WebView(this);
         webView.loadUrl("http://www.weather.com.cn/weather15d/101020100.shtml");
         webView.setDrawingCacheEnabled(true);
