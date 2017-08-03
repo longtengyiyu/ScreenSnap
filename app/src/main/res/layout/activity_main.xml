@@ -1,26 +1,63 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/activity_main"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    android:paddingBottom="@dimen/activity_vertical_margin"
-    android:paddingLeft="@dimen/activity_horizontal_margin"
-    android:paddingRight="@dimen/activity_horizontal_margin"
-    android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="snap.test.com.screensnap.MainActivity">
+    android:layout_height="match_parent">
 
-    <Button
-        android:id="@+id/snap_ok"
+    <ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <RelativeLayout
+            android:id="@+id/root_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#dddddd"
+            android:paddingBottom="@dimen/activity_vertical_margin"
+            android:paddingLeft="@dimen/activity_horizontal_margin"
+            android:paddingRight="@dimen/activity_horizontal_margin"
+            android:paddingTop="@dimen/activity_vertical_margin"
+            tools:context="snap.test.com.screensnap.ui.MainActivity">
+
+            <TextView
+                android:id="@+id/snap_content_tv"
+                android:layout_width="match_parent"
+                android:layout_height="500dp"
+                android:gravity="center_horizontal"
+                android:text="这个是内容"
+                />
+
+            <!--<RelativeLayout-->
+                <!--android:layout_width="match_parent"-->
+                <!--android:layout_height="wrap_content"-->
+                <!--android:layout_below="@+id/snap_content_tv"-->
+                <!--android:descendantFocusability="blocksDescendants">-->
+
+                <android.support.v7.widget.RecyclerView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/snap_img_rv"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/snap_content_tv"
+                    />
+            <!--</RelativeLayout>-->
+
+
+        </RelativeLayout>
+    </ScrollView>
+
+    <TextView
+        android:id="@+id/snap_bottom_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="屏幕快照"/>
+        android:layout_alignParentBottom="true"
+        android:textColor="#000000"
+        android:text="假装是分享"
+        android:gravity="center"
+        android:textSize="15sp"
+        android:background="#FFFFFF"
+        android:paddingBottom="50dp"
+        android:paddingTop="50dp" />
 
-    <ImageView
-        android:id="@+id/snap_iv"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:layout_centerInParent="true"
-        android:layout_below="@+id/snap_ok"
-        android:scaleType="fitXY"/>
 </RelativeLayout>
